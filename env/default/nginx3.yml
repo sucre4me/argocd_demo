@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: atos
+  labels:
+    app: atos
+spec:
+  template:
+    metadata:
+      name: redis
+      labels:
+        app: atos
+    spec:
+      containers:
+      - name: redis
+        image: redis
+        ports:
+        - containerPort: 80
+  replicas: 2
+  selector:
+    matchLabels:
+      app: atos
