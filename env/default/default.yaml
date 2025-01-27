@@ -1,13 +1,13 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: sucre-application
+  name: my-app2
   namespace: argocd
 spec:
   destination:
     namespace: sucre
     server: https://kubernetes.default.svc
-  project: default
+  project: project-1
   source:
     directory:
       recurse: true
